@@ -42,5 +42,5 @@ $ npm install && npm run dev
 ![](https://i.imgur.com/omHPvbS.png)
 > 用檔案夾依照領域的內容分類
 
-![](https://i.imgur.com/jAM41Gw.png)
+![](https://i.imgur.com/YV1eByP.png)
 > 空間容量的規劃視組織或專案所產製的文件多寡而定
