@@ -20,6 +20,10 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
+- 執行 __Artisan__ 指令的 __storage:link__ 來建立連結符號，讓公用可存取的檔案維持在一個目錄中。
+```sh
+$ php artisan storage:link
+```
 - 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
 ```sh
 $ npm install && npm run dev
