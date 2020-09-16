@@ -66,7 +66,7 @@ return [
         'view_file'    => '檢視檔案',
     ],
     'profile' => [
-        'title' => 'Profile',
+        'title' => '個人資料',
     ],
     'register' => [
         'title'   => '註冊',
