@@ -1,48 +1,79 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.app')
+@section('content')
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card mx-4">
+            <div class="card-body p-4">
+                <h1>{{ trans('panel.site_title') }}</h1>
 
-        <x-jet-validation-errors class="mb-4" />
+                <p class="text-muted">{{ trans('global.login') }}</p>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label value="{{ trans('global.login.content.email') }}" />
-                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label value="{{ trans('global.login.content.password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ trans('global.login.content.remember_me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ trans('global.forgot_your_password.title') }}
-                    </a>
+                @if(session('message'))
+                    <div class="alert alert-info" role="alert">
+                        {{ session('message') }}
+                    </div>
                 @endif
 
-                <x-jet-button class="ml-4">
-                    {{ trans('global.login.title') }}
-                </x-jet-button>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+
+                        <input id="email" name="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
+
+                        @if($errors->has('email'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('email') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+
+                        <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
+
+                        @if($errors->has('password'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('password') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-4">
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" name="remember" type="checkbox" id="remember" style="vertical-align: middle;" />
+                            <label class="form-check-label" for="remember" style="vertical-align: middle;">
+                                {{ trans('global.remember_me') }}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary px-4">
+                                {{ trans('global.login') }}
+                            </button>
+                        </div>
+                        <div class="col-6 text-right">
+                            @if(Route::has('password.request'))
+                                <a class="btn btn-link px-0" href="{{ route('password.request') }}">
+                                    {{ trans('global.forgot_password') }}
+                                </a><br>
+                            @endif
+
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+</div>
+@endsection

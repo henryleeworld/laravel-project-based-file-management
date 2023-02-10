@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use \DateTimeInterface;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\Models\Media;
 
 class Project extends Model
 {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRelationshipFieldsToFoldersTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -15,4 +15,4 @@ class AddRelationshipFieldsToFoldersTable extends Migration
             $table->foreign('parent_id', 'parent_fk_2186093')->references('id')->on('folders');
         });
     }
-}
+};

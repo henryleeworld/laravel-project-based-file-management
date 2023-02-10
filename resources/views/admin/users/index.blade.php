@@ -4,14 +4,14 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.users.create') }}">
-                {{ trans('global.operation.add') }} {{ trans('cruds.user.title_singular') }}
+                {{ trans('global.add') }} {{ trans('cruds.user.title_singular') }}
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.user.title_singular') }} {{ trans('global.operation.list') }}
+        {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -68,21 +68,21 @@
                             <td>
                                 @can('user_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                        {{ trans('global.operation.view') }}
+                                        {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('user_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                        {{ trans('global.operation.edit') }}
+                                        {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
                                 @can('user_delete')
-                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.information.are_you_sure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.operation.delete') }}">
+                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
 
@@ -121,7 +121,7 @@
         return
       }
 
-      if (confirm('{{ trans('global.information.are_you_sure') }}')) {
+      if (confirm('{{ trans('global.areYouSure') }}')) {
         $.ajax({
           headers: {'x-csrf-token': _token},
           method: 'POST',

@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.operation.create') }} {{ trans('cruds.folder.title_singular') }}
+        {{ trans('global.create') }} {{ trans('cruds.folder.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.operation.save') }}
+                    {{ trans('global.save') }}
                 </button>
             </div>
         </form>

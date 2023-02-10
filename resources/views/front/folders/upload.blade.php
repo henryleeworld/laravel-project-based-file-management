@@ -19,7 +19,7 @@
                             <input type="hidden" name="folder_id" value="{{ request('folder_id') }}" />
 
                             <div class="form-group">
-                                <label for="files">{{ trans('frontend.folder.upload.content.files') }}</label>
+                                <label for="files">{{ trans('frontend.folder.upload.content.images') }}</label>
                                 <div class="needsclick dropzone {{ $errors->has('files') ? 'is-invalid' : '' }}" id="files-dropzone">
                                 </div>
                                 @if($errors->has('files'))

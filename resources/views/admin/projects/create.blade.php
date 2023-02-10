@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.operation.create') }} {{ trans('cruds.project.title_singular') }}
+        {{ trans('global.create') }} {{ trans('cruds.project.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -22,8 +22,8 @@
             <div class="form-group">
                 <label for="users">{{ trans('cruds.project.fields.users') }}</label>
                 <div style="padding-bottom: 4px">
-                    <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.operation.select_all') }}</span>
-                    <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.operation.deselect_all') }}</span>
+                    <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
+                    <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
                 </div>
                 <select class="form-control select2 {{ $errors->has('users') ? 'is-invalid' : '' }}" name="users[]" id="users" multiple>
                     @foreach($users as $id => $users)
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.operation.save') }}
+                    {{ trans('global.save') }}
                 </button>
             </div>
         </form>

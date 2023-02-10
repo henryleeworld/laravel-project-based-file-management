@@ -11,7 +11,7 @@ use App\Models\Folder;
 use App\Models\Project;
 use Gate;
 use Illuminate\Http\Request;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
 class FoldersController extends Controller
@@ -31,9 +31,9 @@ class FoldersController extends Controller
     {
         abort_if(Gate::denies('folder_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::all()->pluck('name', 'id')->prepend(trans('global.information.select'), '');
+        $projects = Project::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $parents = Folder::all()->pluck('name', 'id')->prepend(trans('global.information.select'), '');
+        $parents = Folder::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.folders.create', compact('projects', 'parents'));
     }
@@ -57,9 +57,9 @@ class FoldersController extends Controller
     {
         abort_if(Gate::denies('folder_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::all()->pluck('name', 'id')->prepend(trans('global.information.select'), '');
+        $projects = Project::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $parents = Folder::all()->pluck('name', 'id')->prepend(trans('global.information.select'), '');
+        $parents = Folder::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $folder->load('project', 'parent');
 

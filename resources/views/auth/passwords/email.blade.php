@@ -18,7 +18,7 @@
                     @csrf
 
                     <div class="form-group">
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" required autocomplete="email" autofocus placeholder="{{ trans('global.login.content.email') }}" value="{{ old('email') }}">
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email') }}">
 
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-flat btn-block">
-                                {{ trans('global.reset_password.content.send_password') }}
+                                {{ trans('global.send_password') }}
                             </button>
                         </div>
                     </div>

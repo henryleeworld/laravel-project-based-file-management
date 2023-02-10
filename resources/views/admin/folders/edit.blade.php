@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.operation.edit') }} {{ trans('cruds.folder.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('cruds.folder.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -60,9 +60,9 @@
                 <span class="help-block">{{ trans('cruds.folder.fields.parent_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="thumbnail_id">{{ trans('global.thumbnail') }}</label>
+                <label for="thumbnail_id">Thumbnail</label>
                 <select class="form-control select2 {{ $errors->has('thumbnail') ? 'is-invalid' : '' }}" name="thumbnail_id" id="thumbnail_id">
-                    <option value="">{{ trans('global.information.select') }}</option>
+                    <option value="">Please select</option>
                     @foreach($folder->images as $image)
                         <option value="{{ $image->id }}" {{ old('thumbnail_id', $folder->thumbnail_id) == $image->id ? 'selected' : '' }}>{{ $image->name }}</option>
                     @endforeach
@@ -75,7 +75,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.operation.save') }}
+                    {{ trans('global.save') }}
                 </button>
             </div>
         </form>

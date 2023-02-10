@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\Folder;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\StoreFolderRequest;
 use App\Http\Requests\UpdateFolderRequest;
 use App\Http\Resources\Admin\FolderResource;
+use App\Models\Folder;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

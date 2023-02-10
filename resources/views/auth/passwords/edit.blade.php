@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.change_password.title') }}
+        {{ trans('global.change_password') }}
     </div>
 
     <div class="card-body">
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.operation.save') }}
+                    {{ trans('global.save') }}
                 </button>
             </div>
         </form>

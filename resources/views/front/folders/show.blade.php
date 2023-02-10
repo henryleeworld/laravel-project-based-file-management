@@ -6,7 +6,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        {{ trans('frontend.folder.title') }} {{ $folder->name }}
+					    {{ trans('frontend.folder.title') }} {{ $folder->name }}
                     </div>
 
                     <div class="card-body">
@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             <a href="{{ route('folders.create') }}?parent_id={{ $folder->id }}" class="btn btn-success">{{ trans('frontend.folder.create.title') }}</a>
-                            <a href="{{ route('folders.upload') }}?folder_id={{ $folder->id }}" class="btn btn-primary">{{ trans('frontend.folder.show.content.upload_images') }}</a>
+                            <a href="{{ route('folders.upload') }}?folder_id={{ $folder->id }}" class="btn btn-primary">{{ trans('frontend.folder.upload.title') }}</a>
                         </div>
 
                         <div class="row">

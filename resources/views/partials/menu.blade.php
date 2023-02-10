@@ -12,7 +12,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                 </i>
-                {{ trans('global.dashboard.title') }}
+                {{ trans('global.dashboard') }}
             </a>
         </li>
         @can('user_management_access')
@@ -83,7 +83,7 @@
                     <a class="c-sidebar-nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}" href="{{ route('profile.password.edit') }}">
                         <i class="fa-fw fas fa-key c-sidebar-nav-icon">
                         </i>
-                        {{ trans('global.change_password.title') }}
+                        {{ trans('global.change_password') }}
                     </a>
                 </li>
             @endcan
@@ -93,7 +93,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
                 </i>
-                {{ trans('global.logout.title') }}
+                {{ trans('global.logout') }}
             </a>
         </li>
     </ul>
