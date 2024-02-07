@@ -18,7 +18,7 @@
                             @csrf
                             <input type="hidden" name="parent_id" value="{{ request('parent_id') }}" />
 
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="name">{{ trans('frontend.folder.create.content.name') }}</label>
                                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
                                 @error('name')
@@ -27,7 +27,7 @@
                                 </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="mb-0">
                                 <button type="submit" class="btn btn-primary">{{ trans('frontend.folder.create.content.submit') }}</button>
                             </div>
                         </form>

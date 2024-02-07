@@ -18,7 +18,7 @@
                             @csrf
                             <input type="hidden" name="folder_id" value="{{ request('folder_id') }}" />
 
-                            <div class="form-group">
+                            <div class="row mb-3">
                                 <label for="files">{{ trans('frontend.folder.upload.content.images') }}</label>
                                 <div class="needsclick dropzone {{ $errors->has('files') ? 'is-invalid' : '' }}" id="files-dropzone">
                                 </div>
@@ -29,7 +29,7 @@
                                 @endif
                             </div>
 
-                            <div class="form-group">
+                            <div class="mb-0">
                                 <button type="submit" class="btn btn-primary">{{ trans('frontend.folder.upload.content.upload') }}</button>
                             </div>
                         </form>

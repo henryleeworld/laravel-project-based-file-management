@@ -16,12 +16,12 @@
                             </div>
                         @endif
 
-                        <div class="form-group">
+                        <div class="mb-3">
                             <a href="{{ route('folders.create') }}?parent_id={{ $folder->id }}" class="btn btn-success">{{ trans('frontend.folder.create.title') }}</a>
                             <a href="{{ route('folders.upload') }}?folder_id={{ $folder->id }}" class="btn btn-primary">{{ trans('frontend.folder.upload.title') }}</a>
                         </div>
 
-                        <div class="row">
+                        <div class="row mb-3">
                             @foreach ($folder->children as $folder)
                                 <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
                                     <div class="card">
@@ -52,7 +52,7 @@
                             @endforeach
                         </div>
 
-                        <div class="form-group">
+                        <div class="mb-0">
                             @if ($folder->parent)
                                 <a href="{{ route('folders.show', [$folder->parent]) }}" class="btn btn-primary">
                                     {{ trans('frontend.folder.show.content.back_to_folder') }} {{ $folder->parent->name }}
